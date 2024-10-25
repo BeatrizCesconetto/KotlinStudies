@@ -2,12 +2,20 @@ package polimorphism
 
 fun main() {
 
-    val p = Programmer()
-    p.work()
+    val a: Programmer = Programmer()
+    a.work()
 
-    val t = Teacher()
-    t.work()
+    val b: KotlinProgrammer = KotlinProgrammer()
+    b.work()
 
+    //Pode fazer isso pq KotlinProgrammer herda Programmer
+    //Nesses casos sempre vai chamar o método
+    // do que está instanciado ou na memória
+    var c: Programmer = KotlinProgrammer()
+    c.work()
+
+    c = Programmer()
+    c.work()
 }
 
 abstract class Employee {
@@ -17,9 +25,16 @@ abstract class Employee {
 
 }
 
-class Programmer : Employee() {
+open class Programmer : Employee() {
     override fun work() {
        println("Programmer working...")
+    }
+}
+
+class KotlinProgrammer : Programmer() {
+
+    override fun work() {
+        println("Kotlin programmer working")
     }
 }
 
