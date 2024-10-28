@@ -20,7 +20,7 @@ class BankAccount() {
     var balance: Double = 0.0
         private set
 
-    fun depoist(value: Double) {
+    fun deposit(value: Double) {
         if (value < 0) {
             throw InvalidValueException(value)
         }
