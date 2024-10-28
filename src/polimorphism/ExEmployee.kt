@@ -27,18 +27,19 @@ fun pay(worker: Worker) {
     totalPay += worker.pay()
 }
 
+//Se não for usar a propriedade da classe dentro dela não precisa botar val/var
 abstract class Worker(val baseSalary: Double){
 
     fun pay() : Double {
         return baseSalary * multiplier()
     }
 
-    //retorna um Double
+    //o abstract no método força ele a ser implementado nas subclasses herdadas
     abstract fun multiplier() : Double
 }
 
 class HourlyWorker(
-    hourPrice: Double,
+    val hourPrice: Double,
     val hoursWorked: Int
 ) : Worker(hourPrice) {
 
