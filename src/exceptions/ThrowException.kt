@@ -5,7 +5,7 @@ fun main(){
     val account = BankAccount()
 
     try {
-        account.depoist(500.0)
+        account.deposit(500.0)
         account.withdraw(200.0)
         //Fazer catch apenas de exception e não de error
     } catch (e: Exception) {

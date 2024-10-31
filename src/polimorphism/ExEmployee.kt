@@ -50,7 +50,7 @@ class HourlyWorker(
 }
 
 class Freelancer(
-    val totalSalary: Double
+    totalSalary: Double
 ) : Worker(totalSalary) {
 
     override fun multiplier(): Double {
